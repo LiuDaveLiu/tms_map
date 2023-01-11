@@ -1188,8 +1188,8 @@ if __name__=='__main__':
 
     elif options.orderType=='g': # generate host file
       IPList = (ip for ip,results in query.getHosts())
-      for ip in ipsort(IPList):
-        print ip
+      #for ip in ipsort(IPList):
+        #print ip
         
     elif options.orderType=='p': # output ordered by Nessus plugins
       num = 1
