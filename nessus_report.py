@@ -161,13 +161,13 @@ class ODFTable:
 
     def initializeDocument( self ):
       
-	self.textdoc = OpenDocumentText()
-        
-	# Create a style for the table content. One we can modify
-	# later in the word processor.
-	self.tablecontents = Style(name="Table Contents", family="paragraph")
-	self.tablecontents.addElement(ParagraphProperties(numberlines="false", linenumber="0"))
-	self.textdoc.styles.addElement(self.tablecontents)
+        self.textdoc = OpenDocumentText()
+            
+        # Create a style for the table content. One we can modify
+        # later in the word processor.
+        self.tablecontents = Style(name="Table Contents", family="paragraph")
+        self.tablecontents.addElement(ParagraphProperties(numberlines="false", linenumber="0"))
+        self.textdoc.styles.addElement(self.tablecontents)
         
         
         # ----------------- define a few styles --------------------
