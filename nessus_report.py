@@ -221,66 +221,66 @@ class ODFTable:
            'none':self.NoteStyle
            }
         
-	# Create automatic styles for the column widths.
-	# We want two different widths, one in inches, the other one in metric.
-	# ODF Standard section 15.9.1
-	widthshort = Style(name="Wshort", family="table-column")
-	widthshort.addElement(TableColumnProperties(columnwidth="1.7cm"))
-	self.textdoc.automaticstyles.addElement(widthshort)
+        # Create automatic styles for the column widths.
+        # We want two different widths, one in inches, the other one in metric.
+        # ODF Standard section 15.9.1
+        widthshort = Style(name="Wshort", family="table-column")
+        widthshort.addElement(TableColumnProperties(columnwidth="1.7cm"))
+        self.textdoc.automaticstyles.addElement(widthshort)
 
-	widthwide = Style(name="Wwide", family="table-column")
-	widthwide.addElement(TableColumnProperties(columnwidth="1.5in"))
-	self.textdoc.automaticstyles.addElement(widthwide)
-        
-        
-        
-        # hard-code columns styles, per column
-	widthwide = Style(name="Wwide", family="table-column")
-	widthwide.addElement(TableColumnProperties(columnwidth="1.5in"))
-	self.textdoc.automaticstyles.addElement(widthwide)        
-        
+        widthwide = Style(name="Wwide", family="table-column")
+        widthwide.addElement(TableColumnProperties(columnwidth="1.5in"))
+        self.textdoc.automaticstyles.addElement(widthwide)
+            
+            
+            
+            # hard-code columns styles, per column
+        widthwide = Style(name="Wwide", family="table-column")
+        widthwide.addElement(TableColumnProperties(columnwidth="1.5in"))
+        self.textdoc.automaticstyles.addElement(widthwide)        
+            
 
-	# Start the table and describe the columns
-	self.table = Table()
-	if self.orderType=='p':
-	    self.table.addElement(TableColumn(numbercolumnsrepeated=7,stylename=widthwide))
+        # Start the table and describe the columns
+        self.table = Table()
+        if self.orderType=='p':
+            self.table.addElement(TableColumn(numbercolumnsrepeated=7,stylename=widthwide))
 
-        # populate columns with headers...
-        tr = TableRow()
-        self.table.addElement(tr)
-        
-        # declare necessary vars
-        tc1 = TableCell(); tc2 = TableCell(); tc3 = TableCell(); tc4 = TableCell(); tc5 = TableCell(); tc6 = TableCell(); tc7 = TableCell();
-        addElem = lambda cell, text, s=self: cell.addElement(ODFParagraph(stylename=self.BoldStyle, text=unicode(text, ODFTable.PWENC)))
+            # populate columns with headers...
+            tr = TableRow()
+            self.table.addElement(tr)
+            
+            # declare necessary vars
+            tc1 = TableCell(); tc2 = TableCell(); tc3 = TableCell(); tc4 = TableCell(); tc5 = TableCell(); tc6 = TableCell(); tc7 = TableCell();
+            addElem = lambda cell, text, s=self: cell.addElement(ODFParagraph(stylename=self.BoldStyle, text=unicode(text, ODFTable.PWENC)))
 
 
-        # Add Column 1: Finding Number
-        addElem(tc1, 'Finding Number')
-        tr.addElement(tc1)
-        
-        # Add Column 2: Vulnerability Name
-        addElem(tc2, 'Vulnerability Name')
-        tr.addElement(tc2)
-        
-        # Add Column 3: NIST 800-53 Mapping
-        addElem(tc3, '800-53 Mapping')
-        tr.addElement(tc3)
-        
-        # Add Column 4: Description
-        addElem(tc4, 'Description')
-        tr.addElement(tc4)
-        
-        # Add Column 5: Recommendation
-        addElem(tc5, 'Recommendation')
-        tr.addElement(tc5)
-        
-        # Add Column 6: CVE
-        addElem(tc6, 'CVE')
-        tr.addElement(tc6)
-        
-        # Add Column 6: Hosts Affected
-        addElem(tc7, 'IP Address (Sample of hosts effected)')
-        tr.addElement(tc7)        
+            # Add Column 1: Finding Number
+            addElem(tc1, 'Finding Number')
+            tr.addElement(tc1)
+            
+            # Add Column 2: Vulnerability Name
+            addElem(tc2, 'Vulnerability Name')
+            tr.addElement(tc2)
+            
+            # Add Column 3: NIST 800-53 Mapping
+            addElem(tc3, '800-53 Mapping')
+            tr.addElement(tc3)
+            
+            # Add Column 4: Description
+            addElem(tc4, 'Description')
+            tr.addElement(tc4)
+            
+            # Add Column 5: Recommendation
+            addElem(tc5, 'Recommendation')
+            tr.addElement(tc5)
+            
+            # Add Column 6: CVE
+            addElem(tc6, 'CVE')
+            tr.addElement(tc6)
+            
+            # Add Column 6: Hosts Affected
+            addElem(tc7, 'IP Address (Sample of hosts effected)')
+            tr.addElement(tc7)        
 
         
     # Print a single entry
