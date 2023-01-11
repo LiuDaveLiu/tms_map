@@ -110,16 +110,16 @@ def  printEntryNormal( options, result, _ipList=[], count=1 ):
     if _ipList==[]: ipList=[result.getIP()]
     else: ipList = _ipList
     
-    print '='*80
+    #print '='*80
 #    print 'Network:   %s' % result.network
-    print 'IP:        %s' % ', '.join(ipsort(uniq(ipList)))
-    print 'Service:   Port %s/%s (%s)' % (result.getPort(), result.getProtocol().upper(), result.getServiceName().upper())
-    print 'Risk Factor: %s' % result.getRiskFactor()
-    print 'Severity:  %s' % result.getSeverityAsWord()
-    print 'ID:        %s' % result.getPluginID()
-    print '-------------- Contents -----------------------------------------'
-    for n in sorted(result.vuln.keys()):    print '%s:\n%s\n' % (n, result.vuln[n].strip())
-    print '-----------------------------------------------------------------'
+    #print 'IP:        %s' % ', '.join(ipsort(uniq(ipList)))
+    #print 'Service:   Port %s/%s (%s)' % (result.getPort(), result.getProtocol().upper(), result.getServiceName().upper())
+    #print 'Risk Factor: %s' % result.getRiskFactor()
+    #print 'Severity:  %s' % result.getSeverityAsWord()
+    #print 'ID:        %s' % result.getPluginID()
+    #print '-------------- Contents -----------------------------------------'
+    #for n in sorted(result.vuln.keys()):    print '%s:\n%s\n' % (n, result.vuln[n].strip())
+    #print '-----------------------------------------------------------------'
 
     
 # Print an entry in comma-separated delimiter (CSV) format
