@@ -468,7 +468,7 @@ class NBENessusParser(Parser):
                 
             # Otherwise, this is a totally weird line, and alert the user to bug the developer to fix it
             else: 
-                print 'corner case detected: %s' % l
+                #print 'corner case detected: %s' % l
                 print('len(groups) = %d' % len(groups))
                 raise Exception("weird line, please alert developer")
             
@@ -534,9 +534,9 @@ class NBENessusParser(Parser):
                 
                     if DEBUG:
                         # um... we got a bad line.  Do nothing; this entry won't get reported (it's probably not a complete entry anyway)
-                        print '!!!!!! bad line:'
-                        print '  line=%s' % line
-                        print '  network=%s, ip=%s, service=%s, pluginID=%s, severity=%s, content=%s ' % (network, ip, service, pluginID, severity, content)
+                        #print '!!!!!! bad line:'
+                        #print '  line=%s' % line
+                        #print '  network=%s, ip=%s, service=%s, pluginID=%s, severity=%s, content=%s ' % (network, ip, service, pluginID, severity, content)
 
                     vuln['port'] = 'general' # _service.split('/')[1]
                     vuln['protocol'] = 'general'
@@ -1075,7 +1075,7 @@ def parseHostList( ipstring ):
             ips = ["%s.%s" % (currentNetwork,i) for i in iprange]
         
       else:
-        print 'syntax error in specifying host list!'
+        #print 'syntax error in specifying host list!'
         sys.exit(1)
         
       iplist += ips
@@ -1103,7 +1103,7 @@ if __name__=='__main__':
          options.severityList = [translateSeverities[i] for i in options.severityList.split(',')]
          
       except KeyError:
-          print "Error:  Severity options must be comma-separated list of words from the list [%s]" % ",".join(translateSeverities.keys())
+          #print "Error:  Severity options must be comma-separated list of words from the list [%s]" % ",".join(translateSeverities.keys())
           sys.exit(1)
       
     
