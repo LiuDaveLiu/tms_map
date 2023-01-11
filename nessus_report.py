@@ -532,7 +532,7 @@ class NBENessusParser(Parser):
             else:
                 if service[0] not in string.letters:
                 
-                    if DEBUG:
+                    #if DEBUG:
                         # um... we got a bad line.  Do nothing; this entry won't get reported (it's probably not a complete entry anyway)
                         #print '!!!!!! bad line:'
                         #print '  line=%s' % line
